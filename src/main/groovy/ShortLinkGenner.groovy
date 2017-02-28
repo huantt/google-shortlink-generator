@@ -21,9 +21,8 @@ class ShortLinkGenner {
                 .readTimeout(10, TimeUnit.SECONDS)
                 .build()
 
-        RequestBody formBody = new FormBody.Builder()
-                .add("longUrl", "https://trello.com/c/n6kEY8s7/78-public-publisher-postback/")
-                .build();
+         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+        RequestBody formBody = RequestBody.create(JSON, "{\"longUrl\": \"{link}"}");
 
         Request request = new Request.Builder()
                 .url(url)
