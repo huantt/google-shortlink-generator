@@ -33,6 +33,5 @@ class ShortLinkGenner {
 
         def response = Document.parse(client.newCall(request).execute().body().string())
         println response.toJson()
-
     }
 }
